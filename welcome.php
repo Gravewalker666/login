@@ -1,6 +1,8 @@
 <?php
-    $name = $_GET["name"];
-
+$name = $_POST["name"];
+$pass = $_POST["pwd"];
+$oriName = $_POST["originalName"];
+$oriPass = $_POST["originalPassword"];
 ?>
 
 
@@ -39,8 +41,13 @@
         <div class="section text-center">
             <h2 class="title">
                 <?php
-                echo "welcome ";
-                echo $name;
+                if ($name == "username" && $pass == "password") {
+                    echo "welcome " . $name;
+                    echo '<br><a href="login.php" >Log out</a>';
+                } else {
+//                    header("Location: login.php?logged=false"); /* Redirect browser */
+//                    exit();
+                }
                 ?>
             </h2>
         </div>

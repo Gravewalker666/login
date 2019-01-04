@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>
-        Material Kit PRO by Creative Tim
+        Login
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
           name='viewport'/>
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                 <div class="card card-login">
-                    <form class="form" method="get" action="welcome.php">
+                    <form class="form" method="post" action="welcome.php">
                         <div class="card-header card-header-primary text-center">
                             <h4 class="card-title">Log in</h4>
                             <div class="social-line">
@@ -54,6 +54,23 @@
                                 </div>
                                 <input type="text" class="form-control" name="name" placeholder="First Name...">
                             </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="material-icons">face</i>
+                                    </div>
+                                </div>
+                                <input type="password" class="form-control" name="pwd" placeholder="Password">
+                            </div>
+                        </div>
+                        <div>
+                            <?php
+                            if (isset($_GET["logged"])) {
+                                echo "<p  class='text-center text-danger'>invalid username or password</p>";
+                            }
+
+
+                            ?>
                         </div>
                         <div class="footer text-center">
                             <button type="submit" class="btn btn-primary btn-link btn-wd btn-lg">Submit</button>
